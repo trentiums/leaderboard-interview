@@ -11,6 +11,14 @@ export const Container = styled.div`
   display: flex;
   font-size: 12px;
 `;
+export const TableTitle = styled.div`
+  margin-top: 10px;
+  font-size: 26px;
+  font-weight: 400px;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+`;
 export const TableContainer = styled.div`
   background-color: #ffffff;
   width: 90%;

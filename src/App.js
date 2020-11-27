@@ -1,7 +1,7 @@
 import React, { useEffect, useState, memo, createRef } from 'react';
 import initialData from '../src/shared/data.json';
 import CardItem from './components/CardItem';
-import { Container, TableContainer } from "./components/StyledComponent";
+import { Container, TableContainer, TableTitle } from "./components/StyledComponent";
 import { getUpdatedScore } from './shared/functions';
 import AnimateBubbles from "./components/AnimateBubbles";
 
@@ -14,6 +14,7 @@ function App() {
   }, [setData])
   return (
     <Container>
+      <TableTitle>Leaderboard</TableTitle>
       <TableContainer>
         <CardItem isHeader={true}/>
           <AnimateBubbles>
