@@ -1,8 +1,9 @@
-import React, { useEffect, useState, memo } from 'react';
+import React, { useEffect, useState, memo, createRef } from 'react';
 import initialData from '../src/shared/data.json';
 import CardItem from './components/CardItem';
 import { Container, TableContainer } from "./components/StyledComponent";
 import { getUpdatedScore } from './shared/functions';
+import AnimateBubbles from "./components/AnimateBubbles";
 
 function App() {
   const [dataState, setData] = useState(initialData);
@@ -15,12 +16,15 @@ function App() {
     <Container>
       <TableContainer>
         <CardItem isHeader={true}/>
-          {dataState.map((dataItem,index)=>
-            <CardItem 
-              key={dataItem.userID}
-              data={{...dataItem, rank: index + 1}}
-            />
-          )}
+          <AnimateBubbles>
+            {dataState.map((dataItem,index)=>
+              <CardItem 
+                ref={createRef()}
+                key={dataItem.userID}
+                data={{...dataItem, rank: index + 1}}
+              />
+            )}
+          </AnimateBubbles>
       </TableContainer>
     </Container>
   );

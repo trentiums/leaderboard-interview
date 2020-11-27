@@ -1,10 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { defaultPic } from "../assets/image";
 import { TableItem, ItemRank, ItemProfile, ItemPoints, ItemNumber, ItemImage } from "./StyledComponent";
 
-const CardItem = ({data, isHeader}) => {
+const CardItem = forwardRef(({data, isHeader}, ref) => {
   return (
-    <TableItem isHeader={isHeader}>
+    <TableItem isHeader={isHeader} ref={ref}>
       <ItemRank isHeader={isHeader}>
         {isHeader ? 'Rank' : <ItemNumber>{data?.rank}</ItemNumber>}
       </ItemRank>
@@ -15,6 +15,6 @@ const CardItem = ({data, isHeader}) => {
       <ItemPoints isHeader={isHeader}>{data?.score || 'Points'}</ItemPoints>
     </TableItem>
   );
-};
+});
 
 export default CardItem;

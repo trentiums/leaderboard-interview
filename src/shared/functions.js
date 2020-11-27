@@ -1,3 +1,4 @@
+import React, { useEffect, useRef } from "react";
 import { animSpeedController, dataController } from "./constants";
 
 const sortArrayOfObjects = (arr, key) => {
@@ -15,3 +16,21 @@ export const getUpdatedScore = (data) => {
   });
   return sortArrayOfObjects(tempData, 'score').reverse();
 }
+
+export const usePrevious = value => {
+  const prevChildrenRef = useRef();
+  useEffect(() => {
+    prevChildrenRef.current = value;
+  }, [value]);
+  return prevChildrenRef.current;
+};
+
+export const calculateBoundingBoxes = children => {
+  const boundingBoxes = {};
+  React.Children.forEach(children, child => {
+    const domNode = child.ref.current;
+    const nodeBoundingBox = domNode.getBoundingClientRect();
+    boundingBoxes[child.key] = nodeBoundingBox;
+  });
+  return boundingBoxes;
+};
