@@ -78,3 +78,9 @@ export const ItemNumber = styled.div`
   padding: 3px;
   line-height: 20px;
 `;
+export const IconImage = styled.img`
+  background-color: #ffffff;
+  margin-right: 5px;
+  height: 20px;
+  width: 20px;
+`;

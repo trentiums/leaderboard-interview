@@ -22,6 +22,7 @@ function App() {
                 ref={createRef()}
                 key={dataItem.userID}
                 data={{...dataItem, rank: index + 1}}
+                previousData={initialData}
               />
             )}
           </AnimateBubbles>
