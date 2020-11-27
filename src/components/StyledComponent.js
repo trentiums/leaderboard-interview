@@ -77,7 +77,7 @@ export const ItemImage = styled.img`
   margin-right: 10px;
 `;
 export const ItemNumber = styled.div`
-  background-color: #7acae9;
+  background-color: ${props => (props.rank === 1 ? '#40db2a' : props.rank === 2 ? '#ffc107' : props.rank === 3 ? '#ff7f50' : '#7acae9')};
   color: #5a5b5e;
   text-align: center;
   border-radius: 100%;

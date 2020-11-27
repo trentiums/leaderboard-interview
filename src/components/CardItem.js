@@ -17,7 +17,7 @@ const CardItem = forwardRef(({data, isHeader, previousData}, ref) => {
             <IconImage src={neutral} alt="" /> :
         ''}
       <ItemRank isHeader={isHeader}>
-        {isHeader ? 'Rank' : <ItemNumber>{data?.rank}</ItemNumber>}
+        {isHeader ? 'Rank' : <ItemNumber rank={data?.rank}>{data?.rank}</ItemNumber>}
       </ItemRank>
       <ItemProfile isHeader={isHeader}>
         {!isHeader && <ItemImage src={data?.picture || defaultPic} alt="" />}
