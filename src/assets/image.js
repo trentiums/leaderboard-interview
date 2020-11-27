@@ -1,0 +1,1 @@
+export { default as defaultPic } from './images/defaultPic.svg';
