@@ -2,12 +2,15 @@ import React, { useEffect, useState, memo } from 'react';
 import initialData from '../src/shared/data.json';
 import CardItem from './components/CardItem';
 import { Container, TableContainer } from "./components/StyledComponent";
+import { getUpdatedScore } from './shared/functions';
 
 function App() {
   const [dataState, setData] = useState(initialData);
   useEffect(() => {
-    setData(initialData);
-  }, [])
+    setInterval(() => {
+      setData(dataState => getUpdatedScore(dataState))
+    }, 1000);
+  }, [setData])
   return (
     <Container>
       <TableContainer>
